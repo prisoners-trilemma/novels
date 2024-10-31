@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import StartMenu from '~/components/StartMenu';
 import TextBlock from '~/components/TextBlock';
@@ -9,7 +8,7 @@ import Notification from '~/components/Notification';
 
 const Awe = () => {
   const [showMenu, setShowMenu] = useState<boolean>(true);
-  const [assets, setAssets] = useState<{
+  const assets = useState<{
     bgm: string;
     se: string;
     bg: string;
@@ -17,28 +16,28 @@ const Awe = () => {
     bgm: '',
     se: '',
     bg: '',
-  });
+  })[0];
 
-  const setBgm = (newBgm: string) => {
-    setAssets((prevAssets) => ({
-      ...prevAssets,
-      bgm: newBgm,
-    }));
-  };
+  // const setBgm = (newBgm: string) => {
+  //   setAssets((prevAssets) => ({
+  //     ...prevAssets,
+  //     bgm: newBgm,
+  //   }));
+  // };
 
-  const setSe = (newSe: string) => {
-    setAssets((prevAssets) => ({
-      ...prevAssets,
-      se: newSe,
-    }));
-  };
+  // const setSe = (newSe: string) => {
+  //   setAssets((prevAssets) => ({
+  //     ...prevAssets,
+  //     se: newSe,
+  //   }));
+  // };
 
-  const setBg = (newBg: string) => {
-    setAssets((prevAssets) => ({
-      ...prevAssets,
-      bg: newBg,
-    }));
-  };
+  // const setBg = (newBg: string) => {
+  //   setAssets((prevAssets) => ({
+  //     ...prevAssets,
+  //     bg: newBg,
+  //   }));
+  // };
   const { fileUrl: bgmSrc } = useAssetLoader(assets.bgm, 'music', '/phantom.dat');
   const { fileUrl: seSrc } = useAssetLoader(assets.se, 'music', '/phantom.dat');
   const { fileUrl: bgSrc } = useAssetLoader(assets.bg, 'images', '/phantom.dat');
