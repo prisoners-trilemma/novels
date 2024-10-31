@@ -7,7 +7,7 @@ import NoMatch from '~/pages/NoMatch';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="oboro" element={<Oboro />} />
           <Route path="phantom" element={<Phantom />} />

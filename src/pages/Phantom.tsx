@@ -4,6 +4,7 @@ import TextBlock from '~/components/TextBlock';
 import AudioController from '~/components/AudioController';
 import { useAssetLoader } from '~/hooks/useAssetLoader';
 import Background from '~/components/Background';
+import getPath from '~/utils/getPath';
 
 const Phantom = () => {
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -37,12 +38,12 @@ const Phantom = () => {
       bg: newBg,
     }));
   };
-  const { fileUrl: bgmSrc } = useAssetLoader(assets.bgm, 'music', '/phantom.dat');
-  const { fileUrl: seSrc } = useAssetLoader(assets.se, 'music', '/phantom.dat');
-  const { fileUrl: bgSrc } = useAssetLoader(assets.bg, 'images', '/phantom.dat');
+  const { fileUrl: bgmSrc } = useAssetLoader(assets.bgm, 'music', getPath('/phantom.dat'));
+  const { fileUrl: seSrc } = useAssetLoader(assets.se, 'music', getPath('/phantom.dat'));
+  const { fileUrl: bgSrc } = useAssetLoader(assets.bg, 'images', getPath('/phantom.dat'));
 
-  const { fileUrl: fgChakusin } = useAssetLoader('chakusin', 'images', '/phantom.dat');
-  const { fileUrl: fgBreak } = useAssetLoader('break', 'images', '/phantom.dat');
+  const { fileUrl: fgChakusin } = useAssetLoader('chakusin', 'images', getPath('/phantom.dat'));
+  const { fileUrl: fgBreak } = useAssetLoader('break', 'images', getPath('/phantom.dat'));
 
   document.title = 'Phantom Girl';
 

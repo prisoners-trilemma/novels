@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import StartMenu from '~/components/StartMenu';
 import TextBlock from '~/components/TextBlock';
@@ -382,6 +383,17 @@ const Awe = () => {
             そう告げれば告げるほど空しいとわかっていても、
             <br />
             強がるよりほかに道は残されていなかったのだ。
+          </TextBlock>
+
+          <hr />
+
+          <Notification message="3:00 水掫村 キャンプ場" />
+
+          <TextBlock className="mt-20 pb-20">
+            「やー、随分遅かったねぇ」
+            <br />
+            <br />
+            啓の開口一番は驚くほど気の抜けるセリフから始まった。
           </TextBlock>
         </div>
       )}
